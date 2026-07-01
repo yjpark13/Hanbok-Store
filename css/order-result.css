@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #f5efe6;
+    color: #2b2118;
+    font-family: Arial, sans-serif;
+}
+
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 60px;
+    background-color: #fffaf2;
+    border-bottom: 1px solid #d8c3a5;
+}
+
+.cart-header h1 {
+    margin: 0;
+    color: #5b3a29;
+}
+
+.cart-header a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #5b3a29;
+    font-weight: bold;
+}
+
+
+#changeInfoButton,
+#saveInfoButton,
+#cartButton,
+#mainButton {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #5b3a29;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
