@@ -3,36 +3,170 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>한복쇼핑몰 메인 - 예복닷컴</title>
+        <title>한복 쇼핑몰 추천</title>
         <link rel="stylesheet" href="../css/index.css">
         <script src="../js/index.js" defer></script>
     </head>
     <body>
-        <header>
-            <div class="example-title">
-                <h1>예복닷컴</h1>
-                <p>
-                    제이앤제이 인터내셔널은 섬유공학과 복식의상 분야를 전공하고 이수한 전문인들의
-                    탄탄한 기술력과 노하우를 바탕으로 한복을 비롯한 다양한 의류를 제작하고 있습니다.
-                </p>
-                <p>
-                    한복이라는 전통문화를 글로벌명품브랜드로 발전시키기 위해 
-                    저희는 크게 3가지 관점에서 접근하고 있습니다.
-                </p>
-                <ul>
-                    <li>재래시장 또는 오프샵을 통한 전통제품 유통 기존기능</li>
-                    <li>온라인 플랫폼을 통한 새로운 유통 경로 개발</li>
-                    <li>36.5도 체감 네트워크</li>
-                </ul>
+            <div class="example-box">
+                <section class="lesson-section">예복닷컴 소개 목차</section>
+                    <ul class="number-list">
+                        <li><button type="button" onclick="location.href='https://yebok.com/shopinfo/guide.html'">쇼핑몰 이용 안내</button></li>
+                        <li><button type="button" onclick="location.href='https://yebok.com/board/index.html'">고객센터</button></li>
+                        <li><button type="button" onclick="location.href='https://yebok.com/member/agreement.html'">이용약관</button></li>
+                        <li><button type="button" onclick="location.href='https://yebok.com/shopinfo/company.html'">회사소개</button></li>
+                    </ul>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="https://yebok.com/">홈</a></li>
-                    <li><a href="https://yebok.com/shopinfo/company.html">회사소개</a></li>
-                    <li><a href="https://yebok.com/board/index.html">고객센터</a></li>
-                </ul>
-            </nav>
-        </header>
+                </section>
+        
+
+                    <style>
+body{
+    font-family: Arial;
+    width:1100px;
+    margin:30px auto;
+}
+
+header{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.search-box{
+    margin:20px 0;
+}
+
+button{
+    cursor:pointer;
+    padding:8px 15px;
+    margin:3px;
+}
+
+.card-wrap{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.card{
+    width:220px;
+    border:1px solid #ddd;
+    padding:15px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.card img{
+    width:180px;
+    height:180px;
+    object-fit:cover;
+}
+
+#detail{
+    margin-top:30px;
+    border:1px solid #999;
+    padding:20px;
+}
+</style>
+
+<div class="container">
+
+    <!-- 헤더 -->
+    <header>
+
+        <h1>🛒 MY SHOP</h1>
+
+        <p>JavaScript 상품 목록 관리 프로젝트</p>
+
+    </header>
+
+    <!-- 검색 영역 -->
+    <section class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="상품명을 입력하세요">
+
+        <button id="searchBtn">
+            검색
+        </button>
+
+    </section>
+
+    <!-- 카테고리 -->
+    <section class="category">
+
+        <button class="categoryBtn" data-category="전체">
+            전체
+        </button>
+
+        <button class="categoryBtn" data-category="전자제품">
+            아동한복
+        </button>
+
+        <button class="categoryBtn" data-category="의류">
+            개량한복
+        </button>
+
+        <button class="categoryBtn" data-category="생활용품">
+            결혼한복
+        </button>
+
+        <button class="categoryBtn" data-category="식품">
+            생활한복
+        </button>
+
+    </section>
+
+    <!-- 추천상품 -->
+
+    <section>
+
+        <h2>⭐ 추천 상품</h2>
+
+        <div
+            id="recommendList"
+            class="card-wrap">
+
+        </div>
+
+    </section>
+
+    <!-- 상품목록 -->
+
+    <section>
+
+        <h2>📦 전체 상품</h2>
+
+        <div
+            id="productList"
+            class="card-wrap">
+
+        </div>
+
+    </section>
+
+    <!-- 상세보기 -->
+
+    <section>
+
+        <h2>📄 상품 상세 정보</h2>
+
+        <div id="detail">
+
+            <p>상품을 선택하면 상세 정보가 표시됩니다.</p>
+
+        </div>
+
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+
+
+   
 
     </body>
 </html>
