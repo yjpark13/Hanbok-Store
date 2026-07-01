@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Hanbok-store</title>
+   <link rel="stylesheet" href="../css/qna.css">
+   <script src="../js/qna.js" defer></script>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+   
+   <main>
+      <h2 class="qna-title fuzzy-bubbles-bold">Q&A <span> - 상품Q&A</span></h2>
+      <table class="board">
+        <thead>
+            <tr>
+                <th width="80">번호</th>
+                <th>제목</th>
+                <th width="120">작성자</th>
+                <th width="120">작성일</th>
+                <th width="70">조회</th>
+            </tr>
+        </thead>
+
+        <tbody id="boardBody">
+            <tr class="notice">
+                <td>공지</td>
+                <td class="title">
+                     <a href="notice.html" id="noticeLink">
+                        ※필독※ 반품 및 교환 공지사항
+                     </a>
+                </td>
+                <td>관리자</td>
+                <td id="writeDate">2026-07-01</td>
+                <td id="views"></td>
+            </tr>
+        </tbody>
+      </table>
+      
+      <div class="button-area">
+         <button id="writeBtn" class="write-button">글쓰기</button>
+      </div>
+
+
+      <div id="writeForm" class="write-box" style="display: none;">
+         <h2>문의사항</h2>
+
+         <table class="write-table">
+            <tr>
+               <th>작성자</th>
+               <td>
+                  <input type="text" id="writer">
+               </td>
+            </tr>
+
+           <tr>
+               <th>제목</th>
+               <td>
+                   <input type="text" id="title">
+               </td>
+           </tr>
+
+           <tr>
+               <th>내용</th>
+               <td>
+                  <textarea id="content"></textarea>
+               </td>
+            </tr>  
+         </table>
+
+         <div class="btn-area">
+            <button type="button" id="cancelBtn">취소</button>
+            <button id="saveBtn">등록</button>
+         </div>
+      </div>
+   </main>
+
+</body>
+</html>

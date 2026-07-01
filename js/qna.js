@@ -1,0 +1,117 @@
+const writeDate = document.getElementById("writeDate");
+const today = new Date();
+const noticeLink = document.getElementById("noticeLink");
+
+const date = `${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,"0")}-${String(today.getDate()).padStart(2,"0")}`;
+writeDate.textContent = `${date}`;
+
+
+const views = document.getElementById("views");
+let count = 0;
+
+views.textContent = count;
+
+noticeLink.addEventListener("click", function() {
+   count++;
+});
+
+const writeBtn = document.getElementById("writeBtn");
+const writeForm = document.getElementById("writeForm");
+const cancelBtn = document.getElementById("cancelBtn");
+
+writeBtn.addEventListener("click", function() {
+    if (writeForm.style.display === "none") {
+        writeForm.style.display = "block";
+    } else {
+        writeForm.style.display = "none";
+    }
+});
+
+cancelBtn.addEventListener("click", function() {
+    writeForm.style.display = "none";
+});
+
+const saveBtn = document.getElementById("saveBtn");
+const boardBody = document.getElementById("boardBody");
+
+let postNo = 1;
+let posts = [];
+
+saveBtn.addEventListener("click", function() {
+    const writer = document.getElementById("writer").value.trim();
+    const title = document.getElementById("title").value.trim();
+    const content = document.getElementById("content").value.trim();
+
+    if (writer === "" || title === "" || content === "") {
+        alert("모든 항목을 입력해주세요.");
+        return;
+    }
+
+    const date = `${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,"0")}-${String(today.getDate()).padStart(2,"0")}`;
+
+    const post = {
+        no: postNo++,
+        id: Date.now(),
+        writer,
+        title,
+        content,
+        date
+    };
+
+    posts.push(post);
+    renderPosts();
+
+    document.getElementById("writer").value = "";
+    document.getElementById("title").value = "";
+    document.getElementById("content").value = "";
+
+    writeForm.style.display = "none";
+});
+
+function renderPosts() {
+
+    boardBody.innerHTML = `
+        <tr class="notice">
+            ${boardBody.querySelector(".notice").innerHTML}
+        </tr>
+    `;
+
+    posts.forEach(function(post) {
+        const tr = document.createElement("tr");
+
+        tr.innerHTML = `
+            <td>${post.no}</td>
+            <td class="title" data-id="${post.id}" style="cursor:pointer;">
+                ${post.title}
+            </td>
+            <td>${post.writer}</td>
+            <td>${post.date}</td>
+            <td>0</td>
+        `;
+
+        boardBody.appendChild(tr);
+
+        // 클릭 이벤트 (내용 펼치기)
+        const titleCell = tr.querySelector(".title");
+
+        titleCell.addEventListener("click", function() {
+            const existing = document.getElementById(`content-${post.id}`);
+
+            if (existing) {
+                existing.remove();
+            } else {
+                const contentTr = document.createElement("tr");
+
+                contentTr.id = `content-${post.id}`;
+                contentTr.innerHTML = `
+                    <td colspan="5" padding:15px;">
+                        ${post.content}
+                    </td>
+                `;
+
+                tr.after(contentTr);
+            }
+        });
+    });
+}
+
