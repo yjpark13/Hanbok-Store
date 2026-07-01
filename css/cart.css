@@ -4,10 +4,15 @@
 
 body {
     margin: 0;
-    background-color: #f5efe6;
     color: #2b2118;
     font-family: Arial, sans-serif;
+    position: relative;
+    background-image: url("../image/hanbok-background2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
 
 
 .cart-header {
