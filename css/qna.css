@@ -10,44 +10,8 @@ body{
 }
 
 
-.container{
-    width: 95%;
-    margin:30px auto;
-    display:flex;
-}
-
-.sidebar{
-    width:300px;
-    min-height: 100vh;
-    padding:20px;
-    border-right:1px solid #ddd;
-}
-
-.sidebar h2{
-    margin-bottom:30px;
-    font-size:26px;
-}
-
-.sidebar ul{
-    list-style:none;
-}
-
-.sidebar li{
-    margin-bottom:20px;
-}
-
-.sidebar a{
-    text-decoration:none;
-    color:#444;
-    font-size:18px;
-}
-
-.sidebar a:hover{
-    color:#d98b5f;
-}
-
 main{
-    width:2000px;
+    width:80%;
     margin:30px auto;
     padding: 40px;
 }
