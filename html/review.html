@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanbok-store 사용후기</title>
+
+    <link rel="stylesheet" href="../css/review.css">
+    <script src="../js/review.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<main>
+
+    <!-- 제목 -->
+    <h2 class="review-title fuzzy-bubbles-bold">
+        REVIEW <span>- 상품review</span>
+    </h2>
+
+    <table class="board">
+        <thead>
+            <tr>
+                <th width="80">번호</th>
+                <th width="120">상품</th>
+                <th>제목</th>
+                <th width="100">평점</th>
+                <th width="120">작성자</th>
+                <th width="120">작성일</th>
+                <th width="70">조회</th>
+            </tr>
+            
+            <tr class="ex">
+               <td>1</td>
+               <td><img src="../image/hanbok1.png" alt="한복1"></td>
+               <td class="title-link" style="cursor:pointer;">마음에 들어요</td>
+               <td>★★★★★</td>
+               <td>홍길동</td>
+               <td>2026-07-01</td>
+               <td class="views">0</td>
+            </tr>
+        </thead>
+
+
+        <tbody id="reviewBody">
+            
+        </tbody>
+    </table>
+
+    <!-- 글쓰기 버튼 -->
+    <div class="button-area">
+        <button id="writeBtn">리뷰 작성</button>
+    </div>
+
+    <!-- 리뷰 작성 -->
+    <div id="writeForm" class="write-box" style="display:none;">
+
+        <h2>상품 후기 작성</h2>
+
+        <table class="write-table">
+
+            <tr>
+                <th>작성자</th>
+                <td>
+                    <input type="text" id="writer">
+                </td>
+            </tr>
+
+            <tr>
+                <th>상품</th>
+                <td>
+                    <input type="file" id="productImage">
+                </td>
+            </tr>
+
+            <tr>
+                <th>제목</th>
+                <td>
+                    <input type="text" id="title">
+                </td>
+            </tr>
+
+            <tr>
+                <th>평점</th>
+                <td>
+                    <select id="rating">
+                        <option value="5">★★★★★</option>
+                        <option value="4">★★★★☆</option>
+                        <option value="3">★★★☆☆</option>
+                        <option value="2">★★☆☆☆</option>
+                        <option value="1">★☆☆☆☆</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <th>사진</th>
+                <td>
+                    <input type="file" id="imagereview">
+                </td>
+            </tr>
+
+            <tr>
+                <th>내용</th>
+                <td>
+                    <textarea id="content"></textarea>
+                </td>
+            </tr>
+
+        </table>
+
+        <div class="btn-area">
+            <button type="button" id="cancelBtn">취소</button>
+            <button id="saveBtn">등록</button>
+        </div>
+
+    </div>
+
+</main>
+
+</body>
+</html>
