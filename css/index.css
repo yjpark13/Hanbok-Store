@@ -1,0 +1,288 @@
+/* ===========================
+   기본 설정
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "맑은 고딕", sans-serif;
+    background: #f4f6f9;
+    color: #333;
+}
+
+.container {
+    width: 1200px;
+    margin: 30px auto;
+}
+
+/* ===========================
+   Header
+=========================== */
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 40px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: gray;
+}
+
+/* ===========================
+   검색 영역
+=========================== */
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.search-box input {
+    width: 350px;
+    padding: 10px;
+    font-size: 16px;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-box button {
+
+    margin-left: 10px;
+    padding: 10px 20px;
+
+    border: none;
+    border-radius: 5px;
+
+    background: #3498db;
+    color: white;
+
+    cursor: pointer;
+}
+
+.search-box button:hover {
+
+    background: #2980b9;
+
+}
+
+/* ===========================
+   카테고리
+=========================== */
+
+.category {
+
+    text-align: center;
+    margin-bottom: 40px;
+
+}
+
+.category button {
+
+    padding: 10px 18px;
+    margin: 5px;
+
+    border: none;
+    border-radius: 5px;
+
+    background: #2ecc71;
+    color: white;
+
+    cursor: pointer;
+
+}
+
+.category button:hover {
+
+    background: #27ae60;
+
+}
+
+/* ===========================
+   제목
+=========================== */
+
+section h2 {
+
+    margin: 30px 0 20px;
+
+}
+
+/* ===========================
+   카드 영역
+=========================== */
+
+.card-wrap {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+
+/* ===========================
+   카드
+=========================== */
+
+.card {
+
+    width: 220px;
+    background: white;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow: 0 3px 8px rgba(0,0,0,.15);
+
+    transition: .3s;
+
+}
+
+.card:hover {
+
+    transform: translateY(-5px);
+
+}
+
+/* ===========================
+   이미지
+=========================== */
+
+.card img {
+
+    width: 100%;
+    height: 180px;
+
+    object-fit: cover;
+
+}
+
+/* ===========================
+   카드 내용
+=========================== */
+
+.card h3 {
+
+    margin: 15px;
+
+    font-size: 18px;
+
+}
+
+.card p {
+
+    margin: 10px 15px;
+
+}
+
+.card button {
+
+    width: calc(100% - 30px);
+
+    margin: 15px;
+
+    padding: 10px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: orange;
+
+    color: white;
+
+    cursor: pointer;
+
+}
+
+.card button:hover {
+
+    background: darkorange;
+
+}
+
+/* ===========================
+   추천상품
+=========================== */
+
+#recommendList .card {
+
+    border: 3px solid gold;
+
+}
+
+/* ===========================
+   상세보기
+=========================== */
+
+#detail {
+
+    margin-top: 20px;
+
+    padding: 20px;
+
+    background: white;
+
+    border-radius: 10px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+
+}
+
+#detail img {
+
+    display: block;
+
+    width: 250px;
+
+    margin: 20px auto;
+
+}
+
+#detail h3 {
+
+    text-align: center;
+
+    margin-bottom: 15px;
+
+}
+
+#detail p {
+
+    margin: 10px 0;
+
+    font-size: 17px;
+
+}
+
+/* ===========================
+   반응형
+=========================== */
+
+@media(max-width:1200px){
+
+.container{
+
+    width:95%;
+
+}
+
+.card-wrap{
+
+    justify-content:center;
+
+}
+
+}
