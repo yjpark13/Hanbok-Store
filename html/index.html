@@ -8,19 +8,8 @@
         <script src="../js/index.js" defer></script>
     </head>
     <body>
-            <div class="example-box">
-                <section class="lesson-section">예복닷컴 소개 목차</section>
-                    <ul class="number-list">
-                        <li><button type="button" onclick="location.href='https://yebok.com/shopinfo/guide.html'">쇼핑몰 이용 안내</button></li>
-                        <li><button type="button" onclick="location.href='https://yebok.com/board/index.html'">고객센터</button></li>
-                        <li><button type="button" onclick="location.href='https://yebok.com/member/agreement.html'">이용약관</button></li>
-                        <li><button type="button" onclick="location.href='https://yebok.com/shopinfo/company.html'">회사소개</button></li>
-                    </ul>
-            </div>
-                </section>
-        
-
-                    <style>
+           
+<style>
 body{
     font-family: Arial;
     width:1100px;
@@ -72,13 +61,21 @@ button{
 <div class="container">
 
     <!-- 헤더 -->
-    <header>
+<header class="main-header">
 
-        <h1>🛒 MY SHOP</h1>
+    <div class="logo">
+        <h1>Hanbok Store</h1>
+    </div>
 
-        <p>JavaScript 상품 목록 관리 프로젝트</p>
+    <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="review.html">Review</a>
+        <a href="qna.html">Q&A</a>
+        <a href="cart.html">Cart</a>
+    </nav>
 
-    </header>
+</header>
 
     <!-- 검색 영역 -->
     <section class="search-box">

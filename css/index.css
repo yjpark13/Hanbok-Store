@@ -22,20 +22,108 @@ body {
 /* ===========================
    Header
 =========================== */
+/* ===========================
+   Header
+=========================== */
+/* Header */
 
-header {
-    text-align: center;
-    margin-bottom: 40px;
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 60px;
+    background-color: #fffaf5;
+    border-bottom: 2px solid #d9c3aa;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-header h1 {
-    font-size: 40px;
-    color: #2c3e50;
-    margin-bottom: 10px;
+.logo h1 {
+    margin: 0;
+    font-size: 36px;
+    color: #6d442b;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
 }
 
-header p {
-    color: gray;
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #5a3a24;
+    font-size: 18px;
+    font-weight: 600;
+
+    position: relative;
+    transition: 0.3s;
+}
+
+.main-nav a:hover {
+    color: #9b6b43;
+}
+
+.main-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    background-color: #9b6b43;
+    transition: 0.3s;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+/* ===========================
+   Navigation
+=========================== */
+
+.main-nav {
+    display: flex;
+    gap: 35px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #4a3426;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.main-nav a:hover {
+    color: #8b5e3c;
+}
+
+.main-nav a::after {
+    content: "";
+
+    display: block;
+    width: 0;
+    height: 2px;
+
+    background-color: #8b5e3c;
+
+    transition: 0.3s;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
 }
 
 /* ===========================
