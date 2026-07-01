@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="../css/write.css">
+   <script src="../js/write.js" defer></script>
+</head>
+<body>
+   <main>
+
+      <div class="write-box">
+
+        <h2>문의사항</h2>
+
+        <table class="write-table">
+            <tr>
+               <th>작성자</th>
+               <td>
+                  <input type="text" id="writer">
+               </td>
+            </tr>
+
+               <tr>
+                   <th>제목</th>
+                   <td>
+                       <input type="text" id="title">
+                   </td>
+               </tr>
+
+               <tr>
+                   <th>내용</th>
+                   <td>
+                       <textarea id="content"></textarea>
+                   </td>
+               </tr>
+         </table>
+
+         <div class="btn-area">
+            <button type="button" onclick="history.back()">취소</button>
+            <button id="saveBtn">등록</button>
+         </div>
+      </div>
+
+   </main>
+</body>
+</html>

@@ -1,0 +1,192 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"맑은 고딕";
+    color:#555;
+}
+
+main{
+    width:1200px;
+    margin:30px auto;
+}
+
+.qna-title {
+      font-size:30px;
+      margin-bottom:30px;
+}
+.qna-title span {
+   font-size:15px;
+   color:#ccc;
+   font-weight:normal;
+}
+
+.board{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+    background:white;
+}
+
+.board thead{
+    background:#f7f7f7;
+}
+
+.board th{
+    padding:15px;
+    border-bottom:2px solid #ddd;
+    font-weight:bold;
+    color:#444;
+}
+
+.board td{
+    padding:18px 10px;
+    border-bottom:1px solid #eee;
+    text-align:center;
+}
+
+
+.board .title{
+    text-align:left;
+    padding-left:20px;
+}
+
+.board .title:hover{
+    color:#0078d4;
+    cursor:pointer;
+}
+
+.board img{
+    width:50px;
+    height:65px;
+    object-fit:cover;
+    border-radius:5px;
+}
+
+.notice{
+    background:#fcfcfc;
+    font-weight:bold;
+}
+
+a {
+   text-decoration: none;
+}
+
+.button-area{
+    margin-top:20px;
+    text-align:right;
+}
+
+.write-button{
+    display:inline-block;
+    padding:10px 25px;
+    background:#333;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+.write-button:hover{
+    background:#555;
+}
+
+.fuzzy-bubbles-regular {
+  font-family: "Fuzzy Bubbles", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fuzzy-bubbles-bold {
+  font-family: "Fuzzy Bubbles", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.write-box {
+    width: 100%;
+    background: #fff;
+}
+
+.write-box h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #333;
+    color: #333;
+}
+
+.write-table th {
+    width: 180px;
+    background: #f7f7f7;
+    border-bottom: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    color: #444;
+}
+
+.write-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+     border-top: 1px solid #ddd;
+}
+
+.write-table td {
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+}
+
+.write-table th {
+    width: 150px;
+    background: #f7f7f7;
+    border-bottom: 1px solid #ddd;
+    padding: 18px;
+    text-align: center;
+}
+
+.write-table input,
+.write-table textarea {
+    display: block;
+    width: 100%;
+}
+
+.write-table input {
+    width: 100%;
+    height: 45px;
+    padding: 0 15px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+.write-table textarea {
+    width: 100%;
+    height: 400px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    font-size: 15px;
+}
+
+.btn-area {
+    margin-top: 25px;
+    text-align: right;
+}
+
+.btn-area button {
+    width: 110px;
+    height: 42px;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.btn-area button:hover {
+    background: #555;
+}
