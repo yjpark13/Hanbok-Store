@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>팀원 A 상품 파트 작업 방향</title>
+  <style>
+    body {
+      font-family: Arial, "Noto Sans KR", sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 32px;
+      background: #f7f3ee;
+      color: #2b211c;
+    }
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 28px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+    h1 {
+      margin-top: 0;
+      color: #3a2a22;
+      border-bottom: 2px solid #c9aa82;
+      padding-bottom: 10px;
+    }
+    h2 {
+      margin-top: 28px;
+      color: #5a3d2b;
+    }
+    ul {
+      padding-left: 22px;
+    }
+    code, pre {
+      background: #f0e6da;
+      border-radius: 6px;
+    }
+    code {
+      padding: 2px 5px;
+    }
+    pre {
+      padding: 14px;
+      overflow-x: auto;
+    }
+    .summary {
+      background: #fff7e8;
+      border-left: 5px solid #c98b3a;
+      padding: 14px 18px;
+      margin-top: 24px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>팀원 A: 상품 출력 · 검색 · 필터 작업 방향</h1>
+
+    <h2>담당 페이지</h2>
+    <ul>
+      <li><code>index.html</code> — 메인 / 추천 상품</li>
+      <li><code>products.html</code> — 전체 상품 목록 / 검색 / 필터</li>
+      <li><code>product-detail.html</code> — 상품 상세</li>
+    </ul>
+
+    <h2>핵심 방향</h2>
+    <p>
+      상품을 HTML에 직접 여러 개 작성하지 않고,
+      <strong>상품 데이터 배열을 만든 뒤 JavaScript로 화면에 출력</strong>하는 방식으로 진행한다.
+    </p>
+
+    <h2>상품 데이터 예시</h2>
+    <pre><code>const products = [
+  {
+    id: 1,
+    name: "오버핏 후드티",
+    category: "상의",
+    price: 39000,
+    color: "black",
+    image: "hoodie.jpg",
+    description: "편하게 입기 좋은 오버핏 후드티"
+  }
+];</code></pre>
+
+    <h2>products.html 작업</h2>
+    <ul>
+      <li><code>products</code> 배열을 <code>forEach</code>로 반복 출력한다.</li>
+      <li>HTML에는 상품이 들어갈 영역만 만든다. 예: <code>&lt;div id="productList"&gt;&lt;/div&gt;</code></li>
+      <li>검색어를 입력하면 상품명에 검색어가 포함된 상품만 다시 출력한다.</li>
+      <li>카테고리 버튼 또는 select로 <code>상의 / 하의 / 가방 / 신발 / 전체</code> 필터를 만든다.</li>
+    </ul>
+
+    <h2>검색 기능 방향</h2>
+    <ul>
+      <li>입력한 검색어를 가져온다.</li>
+      <li><code>product.name.includes(searchText)</code> 방식으로 상품명을 검사한다.</li>
+      <li>검색 결과 배열만 다시 화면에 출력한다.</li>
+    </ul>
+
+    <h2>필터 기능 방향</h2>
+    <ul>
+      <li>사용자가 선택한 카테고리 값을 가져온다.</li>
+      <li><code>product.category === selectedCategory</code> 방식으로 비교한다.</li>
+      <li><code>전체</code> 선택 시 모든 상품을 다시 출력한다.</li>
+    </ul>
+
+    <h2>product-detail.html 작업</h2>
+    <ul>
+      <li>상품 카드 클릭 시 <code>product-detail.html?id=1</code> 형태로 이동한다.</li>
+      <li>상세 페이지에서 <code>URLSearchParams</code>로 id 값을 읽는다.</li>
+      <li>상품 배열에서 id가 같은 상품을 찾아 상세 정보를 출력한다.</li>
+      <li>이미지, 상품명, 가격, 카테고리, 설명, 수량 선택, 총 가격 표시를 넣으면 좋다.</li>
+    </ul>
+
+    <h2>index.html 작업</h2>
+    <ul>
+      <li>추천 상품 3개 정도를 출력한다.</li>
+      <li>랜덤 추천 또는 신상품 영역을 만들면 JS 사용이 분명해진다.</li>
+    </ul>
+
+    <div class="summary">
+      <strong>최소 완성 기준</strong>
+      <ul>
+        <li>상품 배열 만들기</li>
+        <li>상품 카드 반복 출력</li>
+        <li>상품명 검색</li>
+        <li>카테고리 필터</li>
+        <li>상품 상세 페이지 출력</li>
+        <li>메인 추천 상품 출력</li>
+      </ul>
+    </div>
+
+    <div class="summary">
+      <strong>전달 요약</strong>
+      <p>
+        A파트는 상품 데이터를 배열로 만들고, 그 배열을 기준으로 상품 목록, 검색, 필터, 상세 페이지를 구현한다.
+        검색은 상품명 <code>includes</code>, 필터는 <code>category</code> 비교, 상세 페이지는 id값으로 상품 하나를 찾아 출력하는 방식으로 진행한다.
+      </p>
+    </div>
+  </main>
+</body>
+</html>
