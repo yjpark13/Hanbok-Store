@@ -19,8 +19,11 @@ title.addEventListener("click", function () {
 
 // 작성폼 열기
 writeBtn.addEventListener("click", function() {
-    writeForm.style.display =
-        writeForm.style.display === "none" ? "block" : "none";
+    if (writeForm.style.display === "none") {
+        writeForm.style.display = "block";
+    } else {
+        writeForm.style.display = "none";
+    }
 });
 
 // 취소

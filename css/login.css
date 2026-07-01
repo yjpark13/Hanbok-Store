@@ -1,0 +1,46 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  text-indent: 10px;
+}
+label::before {
+  content: "✓ ";
+}
+
+.login-container {
+  max-width: 650px;
+}
+
+.login-box {
+  display: grid;
+  padding: 45px;
+}
+
+.social-login,
+.login-button-box {
+  display: grid;
+  gap: 8px;
+  max-width: 400px;
+}
+.button-container {
+  width: fit-content;
+  margin: 20px auto 0px;
+}
+.social-login {
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 8px;
+}
+
+.login-button-box {
+  grid-template-columns: repeat(2, 1fr);
+}
+.social-login button,
+.loginButtonBox button {
+  width: 100%;
+  word-break: keep-all;
+}

@@ -7,12 +7,14 @@ writeDate.textContent = `${date}`;
 
 
 const views = document.getElementById("views");
-let count = 0;
+let count = Number(localStorage.getItem("noticeViews")) || 0;
 
 views.textContent = count;
 
 noticeLink.addEventListener("click", function() {
    count++;
+   localStorage.setItem("noticeViews", count);
+   views.textContent = count;
 });
 
 const writeBtn = document.getElementById("writeBtn");
@@ -47,15 +49,13 @@ saveBtn.addEventListener("click", function() {
         return;
     }
 
-    const date = `${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,"0")}-${String(today.getDate()).padStart(2,"0")}`;
-
     const post = {
         no: postNo++,
-        id: Date.now(),
         writer,
         title,
         content,
-        date
+        date,
+        views: 0
     };
 
     posts.push(post);
@@ -86,7 +86,7 @@ function renderPosts() {
             </td>
             <td>${post.writer}</td>
             <td>${post.date}</td>
-            <td>0</td>
+            <td class="views">${post.views}</td>
         `;
 
         boardBody.appendChild(tr);
@@ -95,16 +95,20 @@ function renderPosts() {
         const titleCell = tr.querySelector(".title");
 
         titleCell.addEventListener("click", function() {
-            const existing = document.getElementById(`content-${post.id}`);
+            post.views++;
+
+            tr.querySelector(".views").textContent = post.views;
+
+            const existing = document.getElementById(`content-${post.no}`);
 
             if (existing) {
                 existing.remove();
             } else {
                 const contentTr = document.createElement("tr");
 
-                contentTr.id = `content-${post.id}`;
+                contentTr.id = `content-${post.no}`;
                 contentTr.innerHTML = `
-                    <td colspan="5" padding:15px;">
+                    <td colspan="5" style="padding:15px;">
                         ${post.content}
                     </td>
                 `;
