@@ -6,21 +6,18 @@
 
 body{
     font-family:"맑은 고딕";
-    color:#555;
 }
-
 
 main{
     width:80%;
     margin:30px auto;
-    padding: 40px;
 }
 
-.qna-title {
+.review-title {
       font-size:30px;
       margin-bottom:30px;
 }
-.qna-title span {
+.review-title span {
    font-size:15px;
    color:#ccc;
    font-weight:normal;
@@ -37,6 +34,10 @@ main{
     background:#f7f7f7;
 }
 
+.board thead .ex{
+   background-color: white;
+}
+
 .board th{
     padding:15px;
     border-bottom:2px solid #ddd;
@@ -50,17 +51,6 @@ main{
     text-align:center;
 }
 
-
-.board .title{
-    text-align:left;
-    padding-left:20px;
-}
-
-.board .title:hover{
-    color:#0078d4;
-    cursor:pointer;
-}
-
 .board img{
     width:50px;
     height:65px;
@@ -68,27 +58,20 @@ main{
     border-radius:5px;
 }
 
-.notice{
-    background:#fcfcfc;
-    font-weight:bold;
-}
-
-a {
-   text-decoration: none;
-}
 
 .button-area{
     margin-top:20px;
     text-align:right;
 }
 
-.write-button{
-    display:inline-block;
-    padding:10px 25px;
+.button-area button{
+    padding:10px 22px;
+    border:none;
+    border-radius:5px;
     background:#333;
     color:white;
-    text-decoration:none;
-    border-radius:5px;
+    cursor:pointer;
+    font-size:15px;
 }
 
 .write-button:hover{
@@ -139,6 +122,7 @@ a {
 .write-table td {
     border-bottom: 1px solid #ddd;
     padding: 15px;
+    background-color: #fff;
 }
 
 .write-table th {
@@ -161,6 +145,10 @@ a {
     padding: 0 15px;
     border: 1px solid #ccc;
     font-size: 15px;
+}
+
+.write-table input[type=file] {
+   border: none;
 }
 
 .write-table textarea {
