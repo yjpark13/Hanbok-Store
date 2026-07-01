@@ -10,9 +10,11 @@ body {
 }
 
 button {
-  background: linear-gradient(to bottom, #ff7e5f, #feb47b);
+  background: linear-gradient(to bottom, #c79165, #5b2c15);
   color: white;
-  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 7px 13px;
   border: none;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -20,5 +22,62 @@ button {
 }
 
 button:hover {
-  background-color: linear-gradient(to right, #feb47b, #ff7e5f);
+  transform: translateX(1px) translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+input:focus {
+  outline: 2px solid #6d4d26;
+  background-color: #faf8f3;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #444;
+}
+
+fieldset,
+.mypage-container {
+  border: 3px dotted #c09e7e;
+  background-color: #ffffffd6;
+  border-radius: 4px;
+  padding: 0 0 10px 0;
+}
+
+legend {
+  background-color: #91653e;
+  margin-left: 30px;
+  padding: 6px 20px;
+  color: white;
+  border-radius: 3px;
+  font-size: 17px;
+}
+
+.join-container,
+.login-container,
+.mypage-container {
+  width: 80%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.join-box__input,
+.login-box__input {
+  margin-bottom: 16px;
+}
+
+.required {
+  color: red;
+  margin-left: 4px;
+  font-weight: bolder;
 }
