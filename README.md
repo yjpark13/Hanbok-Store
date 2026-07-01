@@ -36,3 +36,20 @@
 | 박용진 | Cart, Order, Order-result Page |
 | 박세희 | Login, Join, Mypage Page |
 | 정호영 | Index, products, product-detail Page |
+
+# 4. 이미지
+
+---
+
+## 4-1. Main Page
+
+![Main](image/readme-image/mainpage.jpg)
+
+### 설명
+
+메인 페이지에서는 다양한 생활 한복 상품을 한눈에 확인할 수 있도록 구성하였습니다.
+
+- 추천 상품 제공
+- 상품 검색 기능
+- 카테고리별 상품 분류
+- Today's Pick 추천 상품 제공
