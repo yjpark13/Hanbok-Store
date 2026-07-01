@@ -1,162 +1,166 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>한복 쇼핑몰 추천</title>
-        <link rel="stylesheet" href="../css/index.css">
-        <script src="../js/index.js" defer></script>
-    </head>
-    <body>
-           
-<style>
-body{
-    font-family: Arial;
-    width:1100px;
-    margin:30px auto;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanbok Store</title>
+    <link rel="stylesheet" href="../css/floating-nav.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/index.js" defer></script>
+</head>
+<body>
+    <nav class="floating-nav">
+  <a href="index.html">
+    <img src="../image/icons/home.png" alt="Home">
+  </a>
 
-header{
-    text-align:center;
-    margin-bottom:30px;
-}
+  <a href="products.html">
+    <img src="../image/icons/category.png" alt="Category">
+  </a>
 
-.search-box{
-    margin:20px 0;
-}
+  <a href="cart.html">
+    <img src="../image/icons/cart.png" alt="Cart">
+  </a>
 
-button{
-    cursor:pointer;
-    padding:8px 15px;
-    margin:3px;
-}
+  <a href="login.html">
+    <img src="../image/icons/login.png" alt="Login">
+  </a>
 
-.card-wrap{
-    display:flex;
-    flex-wrap:wrap;
-    gap:20px;
-}
+  <a href="mypage.html">
+    <img src="../image/icons/mypage.png" alt="Mypage">
+  </a>
 
-.card{
-    width:220px;
-    border:1px solid #ddd;
-    padding:15px;
-    border-radius:10px;
-    text-align:center;
-}
+  <a href="qna.html">
+    <img src="../image/icons/qna.png" alt="Q&A">
+  </a>
 
-.card img{
-    width:180px;
-    height:180px;
-    object-fit:cover;
-}
-
-#detail{
-    margin-top:30px;
-    border:1px solid #999;
-    padding:20px;
-}
-</style>
+  <a href="review.html">
+    <img src="../image/icons/review.png" alt="Review">
+  </a>
+</nav>
 
 <div class="container">
 
-    <!-- 헤더 -->
-<header class="main-header">
+    <!-- Header -->
+    <header class="main-header">
 
-    <div class="logo">
-        <h1>Hanbok Store</h1>
-    </div>
+        <div class="header-left">
 
-    <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="review.html">Review</a>
-        <a href="qna.html">Q&A</a>
-        <a href="cart.html">Cart</a>
-    </nav>
+            <h1>Hanbok Store</h1>
 
-</header>
+            <h2>당신만의 특별한 한복을 만나보세요.</h2>
 
-    <!-- 검색 영역 -->
-    <section class="search-box">
-
-        <input type="text" id="searchInput" placeholder="상품명을 입력하세요">
-
-        <button id="searchBtn">
-            검색
-        </button>
-
-    </section>
-
-    <!-- 카테고리 -->
-    <section class="category">
-
-        <button class="categoryBtn" data-category="전체">
-            전체
-        </button>
-
-        <button class="categoryBtn" data-category="아동한복">
-            아동한복
-        </button>
-
-        <button class="categoryBtn" data-category="개량한복">
-            개량한복
-        </button>
-
-        <button class="categoryBtn" data-category="결혼한복">
-            결혼한복
-        </button>
-
-        <button class="categoryBtn" data-category="생활한복">
-            생활한복
-        </button>
-
-    </section>
-
-    <!-- 추천상품 -->
-
-    <section>
-
-        <h2>⭐ 추천 상품</h2>
-
-        <div id="recommendList" class="card-wrap">
+            <p>
+                전통의 아름다움과 현대적인 감성을 담은
+                다양한 한복을 쉽고 빠르게 찾아보세요.
+            </p>
 
         </div>
 
-    </section>
+    </header>
 
-    <!-- 상품목록 -->
+    <main>
 
-    <section>
+        <!-- 검색 -->
+        <section class="search-box">
 
-        <h2>📦 전체 상품</h2>
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="상품명을 입력하세요">
 
-        <div id="productList" class="card-wrap">
+            <button id="searchBtn">
+                검색
+            </button>
 
-        </div>
+        </section>
 
-    </section>
+        <!-- 카테고리 -->
+        <section class="category">
 
-    <!-- 상세보기 -->
+            <button class="categoryBtn" data-category="전체">전체</button>
 
-    <section>
+            <button class="categoryBtn" data-category="아동한복">아동한복</button>
 
-        <h2>📄 상품 상세 정보</h2>
+            <button class="categoryBtn" data-category="개량한복">개량한복</button>
 
-        <div id="detail">
+            <button class="categoryBtn" data-category="결혼한복">결혼한복</button>
 
-            <p>상품을 선택하면 상세 정보가 표시됩니다.</p>
+            <button class="categoryBtn" data-category="생활한복">생활한복</button>
 
-        </div>
+        </section>
 
-    </section>
+        <!-- 추천상품 + Today's Pick -->
+        <section class="main-product-area">
+
+            <!-- 추천상품 -->
+            <div class="recommend-section">
+
+                <h2>⭐ 추천 상품</h2>
+
+                <div id="recommendList" class="card-wrap">
+
+                </div>
+
+            </div>
+
+            <!-- Today's Pick -->
+            <aside class="today-pick">
+
+                <h2>👘 Today's Pick</h2>
+
+                <div class="pick-card">
+
+                    <img src="../image/hanbok1.png" alt="Today's Pick">
+
+                    <h3>궁중 한복 세트</h3>
+
+                    <p>
+                        왕실의 우아함을 담은
+                        프리미엄 한복입니다.
+                    </p>
+
+                    <strong>250,000원</strong>
+
+                    <button type="button">
+                        상세보기
+                    </button>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+        <!-- 전체 상품 -->
+        <section class="product-section">
+
+            <h2>📦 전체 상품</h2>
+
+            <div id="productList" class="card-wrap">
+
+            </div>
+
+        </section>
+
+        <!-- 상세보기 -->
+        <section class="detail-section">
+
+            <h2>📄 상품 상세 정보</h2>
+
+            <div id="detail">
+
+                <p>
+                    상품을 선택하면 상세 정보가 표시됩니다.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
 
 </div>
 
-<script src="script.js"></script>
-
-
-   
-
-    </body>
+</body>
 </html>
