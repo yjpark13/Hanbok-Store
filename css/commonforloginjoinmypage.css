@@ -3,10 +3,30 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #333;
+    margin: 0;
+    color: #2b2118;
+    font-family: Arial, sans-serif;
+    position: relative;
+    background-color: #f5efe7;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(245, 239, 231, 0.82),
+            rgba(245, 239, 231, 0.82)
+        ),
+        url("../image/hanbok-background2.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    z-index: -1;
 }
 
 button {
