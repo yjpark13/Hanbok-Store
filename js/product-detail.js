@@ -2,168 +2,219 @@ const products = [
 
     {
         id:1,
-        name:"오버핏 후드티",
-        category:"상의",
-        price:39000,
+        name:"CTB4.거울(중)",
+        category:"손거울",
+        price:"30,000",
         color:"black",
-        image:"images/hoodie.jpg",
-        description:"편하게 입기 좋은 오버핏 후드티입니다."
+        image:"../image/handmirror.png",
+        description:"폴리에스테르 재질과 아크릭 재질로 만든 전통 공예품으로 가로 10cm, 세로 20cm 크기이며 국내산 제품이고 습기와 화기, 물리 충격에 주의하세요."
     },
 
     {
         id:2,
-        name:"데님 팬츠",
-        category:"하의",
-        price:49000,
+        name:"CTS2.동전지갑",
+        category:"통/함 종류",
+        price:"4,000",
         color:"blue",
-        image:"images/jeans.jpg",
-        description:"슬림핏 데님 팬츠입니다."
+        image:"../image/traditionalwallet.png",
+        description:"폴리에스테르로 만든 전통공예품으로, 가로 11cm, 세로 7cm 크기이며 국내산 제품이고 습기와 화기, 물리 충격에 주의하세요."
     },
 
     {
         id:3,
-        name:"백팩",
-        category:"가방",
-        price:59000,
+        name:"수복주머니",
+        category:"주머니",
+        price:"8,000",
         color:"black",
-        image:"images/bag.jpg",
-        description:"수납공간이 넓은 백팩입니다."
+        image:"../image/variouspocket.png",
+        description:"폴레에스테르로 만든 전통공예품으로, 가로 12cm, 세로 12cm 크기이며 국내산 제품이고 습기와 화기, 물리 충격에 주의하세요."
     },
 
-    {
-        id:4,
-        name:"운동화",
-        category:"신발",
-        price:89000,
-        color:"white",
-        image:"images/shoes.jpg",
-        description:"가볍고 편안한 운동화입니다."
-    }
 
 ];
 
-// =========================
-// URL에서 id 가져오기
-// =========================
+const productList = document.getElementById("productList");
+const recommendList = document.getElementById("recommendList");
+const detail = document.getElementById("detail");
 
-const params = new URLSearchParams(location.search);
+const searchInput = document.getElementById("searchInput");
+const searchBtn = document.getElementById("searchBtn");
 
-const id = Number(params.get("id"));
+const categoryBtns = document.querySelectorAll(".categoryBtn");
 
-// =========================
-// id가 같은 상품 찾기
-// =========================
 
-const product = products.find(item => item.id === id);
+// ================================
+// 상품 출력
+// ================================
 
-const productDetail = document.querySelector("#productDetail");
+function displayProducts(productArray){
 
-// =========================
-// 상품이 없는 경우
-// =========================
+    productList.innerHTML="";
 
-if(!product){
+    productArray.forEach(product=>{
 
-    productDetail.innerHTML=`
-        <div class="not-found">
-            존재하지 않는 상품입니다.
-        </div>
-    `;
+        productList.innerHTML += `
 
-}else{
+        <div class="card">
 
-    productDetail.innerHTML=`
+            <img src="${product.image}" alt="${product.name}">
 
-    <div class="product-image">
+            <h3>${product.name}</h3>
 
-        <img src="${product.image}" alt="${product.name}">
+            <p>${product.price}원</p>
 
-    </div>
-
-    <div class="product-info">
-
-        <h2>${product.name}</h2>
-
-        <p class="category">
-            카테고리 : ${product.category}
-        </p>
-
-        <p class="price">
-            ${product.price.toLocaleString()}원
-        </p>
-
-        <p class="description">
-            ${product.description}
-        </p>
-
-        <div class="quantity">
-
-            <button id="minusBtn">-</button>
-
-            <input
-                type="text"
-                id="quantity"
-                value="1"
-                readonly>
-
-            <button id="plusBtn">+</button>
+            <button onclick="showDetail(${product.id})">
+                상세보기
+            </button>
 
         </div>
 
-        <div class="total">
-
-            총 가격 :
-            <span id="totalPrice">
-                ${product.price.toLocaleString()}
-            </span>
-            원
-
-        </div>
-
-    </div>
-
-    `;
-
-    // =========================
-    // 수량 선택
-    // =========================
-
-    const quantity=document.querySelector("#quantity");
-
-    const totalPrice=document.querySelector("#totalPrice");
-
-    const plusBtn=document.querySelector("#plusBtn");
-
-    const minusBtn=document.querySelector("#minusBtn");
-
-    let count=1;
-
-    function updatePrice(){
-
-        quantity.value=count;
-
-        totalPrice.textContent=(product.price*count).toLocaleString();
-
-    }
-
-    plusBtn.addEventListener("click",()=>{
-
-        count++;
-
-        updatePrice();
-
-    });
-
-    minusBtn.addEventListener("click",()=>{
-
-        if(count>1){
-
-            count--;
-
-            updatePrice();
-
-        }
+        `;
 
     });
 
 }
+
+
+
+// ================================
+// 추천상품
+// ================================
+
+function displayRecommend(){
+
+    recommendList.innerHTML="";
+
+    // 처음 3개 추천
+
+    products.slice(0,3).forEach(product=>{
+
+        recommendList.innerHTML += `
+
+        <div class="card">
+
+            <img src="${product.image}" alt="${product.name}">
+
+            <h3>${product.name}</h3>
+
+            <p>${product.price}원</p>
+
+            <button onclick="showDetail(${product.id})">
+
+                상세보기
+
+            </button>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+
+
+// ================================
+// 상세보기
+// ================================
+
+function showDetail(id){
+
+    const product = products.find(item=>item.id===id);
+
+    detail.innerHTML=`
+
+        <h2>${product.name}</h2>
+
+        <img src="${product.image}" width="250">
+
+        <p><b>카테고리 :</b> ${product.category}</p>
+
+        <p><b>가격 :</b> ${product.price}원</p>
+
+        <p>${product.description}</p>
+
+    `;
+
+}
+
+
+
+// ================================
+// 검색
+// ================================
+
+searchBtn.addEventListener("click",()=>{
+
+    const keyword = searchInput.value.trim();
+
+    const result = products.filter(product=>{
+
+        return product.name.includes(keyword);
+
+    });
+
+    displayProducts(result);
+
+});
+
+
+
+// 엔터 검색
+
+searchInput.addEventListener("keyup",(e)=>{
+
+    if(e.key==="Enter"){
+
+        searchBtn.click();
+
+    }
+
+});
+
+
+
+
+// ================================
+// 카테고리
+// ================================
+
+categoryBtns.forEach(button=>{
+
+    button.addEventListener("click",function(){
+
+        const category = button.dataset.category;
+
+        // 전체상품
+
+        if(category==="전체메뉴"){
+
+            displayProducts(products);
+
+        } else {
+
+            const filtered = products.filter(product=>{
+
+                return product.category===category;
+        
+        });
+
+        displayProducts(filtered);
+
+    }
+
+    });
+
+});
+
+
+
+
+// ================================
+// 시작
+// ================================
+
+displayProducts(products);
+
+displayRecommend();
