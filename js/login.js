@@ -1,6 +1,7 @@
 const loginId = document.getElementById("loginId");
 const loginPw = document.getElementById("loginPw");
 const loginForm = document.getElementById("loginForm");
+const registerBtn = document.getElementById("registerBtn");
 
 //소셜로그인은 더미로 해서 필수사항들에 기본저장정보?를 넣을것임.
 const kakaoLoginBtn = document.getElementById("kakaoLoginBtn");
@@ -117,4 +118,8 @@ googleLoginBtn.addEventListener("click", () => {
 
   alert("짭글 로그인 성공!");
   location.href = "mypage.html";
+});
+
+registerBtn.addEventListener("click", () => {
+  location.href = "join.html";
 });
