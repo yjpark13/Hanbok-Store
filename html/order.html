@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanbok Store - Order</title>
+
+    <link rel="stylesheet" href="../css/order.css">
+    <script src="../js/order.js" defer></script>
+</head>
+<body>
+
+    <header class="cart-header">
+        <h1>Hanbok Store</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#">Hanbok</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+    </header>
+
+    <main class="cart-page">
+
+        <section class="cart-section">
+            <h2>주문 / 결제</h2>
+
+            <div class="customer-info">
+                <h2 class="section-title">주문자 정보</h2>
+
+                <div id="infoView" class="info-view">
+                    <p><strong id="viewName">박용진</strong></p>
+                    <p id="viewTel">010-1234-5678</p>
+                    <p id="viewEmail">yongjin@email.com</p>
+                    <p id="viewAddress">경기도 하남시 위례대로 20</p>
+                    <p id="viewMemo">문 앞에 놓아주세요</p>
+
+                    <button type="button" id="changeInfoButton">
+                        변경
+                    </button>
+                </div>
+
+                <div id="infoEdit" class="info-edit">
+                    <div class="input-group">
+                        <label for="infoName">이름</label>
+                        <input type="text" id="infoName" value="박용진">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="infoTel">연락처</label>
+                        <input type="tel" id="infoTel" value="010-1234-5678">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="infoEmail">이메일</label>
+                        <input type="email" id="infoEmail" value="yongjin@email.com">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="infoAddress">주소</label>
+                        <input type="text" id="infoAddress" value="경기도 하남시 위례대로 20">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="infoMemo">배송 메모</label>
+                        <textarea id="infoMemo">문 앞에 놓아주세요</textarea>
+                    </div>
+
+                    <button type="button" id="saveInfoButton">
+                        저장
+                    </button>
+                </div>
+            </div>
+
+            <div class="payment-method">
+                <h2 class="section-title">결제 방법</h2>
+
+                <label>
+                    <input type="radio" name="payment" value="신용카드">
+                    신용카드
+                </label>
+
+                <label>
+                    <input type="radio" name="payment" value="계좌이체">
+                    계좌이체
+                </label>
+
+                <label>
+                    <input type="radio" name="payment" value="카카오페이">
+                    카카오페이
+                </label>
+            </div>
+        </section>
+
+        <aside class="payment-box">
+            <h2>주문 요약</h2>
+
+            <div class="cart-item">
+                <div class="item-image">
+                    <img src="../image/hanbok1.png" alt="궁중 한복 세트">
+                </div>
+
+                <div class="item-info">
+                    <h3>궁중 한복 세트</h3>
+                    <p>색상 : 홍색</p>
+                    <p>사이즈 : M</p>
+                    <p class="price">250000</p>
+
+                    <div class="quantity-box">
+                        <button type="button" class="minus-button">-</button>
+                        <input type="text" class="quantity-input" value="1" readonly>
+                        <button type="button" class="plus-button">+</button>
+                    </div>
+                </div>
+
+                <div class="item-total">
+                    <p>합계</p>
+                    <h3 class="item-price-total">250,000원</h3>
+                </div>
+            </div>
+
+            <div class="cart-item">
+                <div class="item-image">
+                    <img src="../image/hanbok2.png" alt="생활 한복">
+                </div>
+
+                <div class="item-info">
+                    <h3>생활 한복</h3>
+                    <p>색상 : 남색</p>
+                    <p>사이즈 : L</p>
+                    <p class="price">120000</p>
+
+                    <div class="quantity-box">
+                        <button type="button" class="minus-button">-</button>
+                        <input type="text" class="quantity-input" value="1" readonly>
+                        <button type="button" class="plus-button">+</button>
+                    </div>
+                </div>
+
+                <div class="item-total">
+                    <p>합계</p>
+                    <h3 class="item-price-total">120,000원</h3>
+                </div>
+            </div>
+
+            <div class="price-info">
+                <p>
+                    <span>상품 금액</span>
+                    <span id="productPrice">0원</span>
+                </p>
+
+                <p>
+                    <span>배송비</span>
+                    <span>무료</span>
+                </p>
+
+                <hr>
+
+                <p class="total-price">
+                    <span>총 결제 금액</span>
+                    <strong id="totalPrice">0원</strong>
+                </p>
+            </div>
+
+            <button type="button" id="paymentButton">
+                결제하기
+            </button>
+        </aside>
+
+    </main>
+
+</body>
+</html>

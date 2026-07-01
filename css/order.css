@@ -1,0 +1,247 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #f5efe6;
+    color: #2b2118;
+    font-family: Arial, sans-serif;
+}
+
+/* 헤더 */
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 60px;
+    background-color: #fffaf2;
+    border-bottom: 1px solid #d8c3a5;
+}
+
+.cart-header h1 {
+    margin: 0;
+    color: #5b3a29;
+}
+
+.cart-header a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #5b3a29;
+    font-weight: bold;
+}
+
+/* 전체 레이아웃 */
+.cart-page {
+    display: flex;
+    gap: 24px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* 왼쪽 */
+.cart-section {
+    width: 55%;
+    padding: 28px;
+    background-color: #fffaf2;
+    border: 1px solid #d8c3a5;
+    border-radius: 16px;
+}
+
+.section-title {
+    margin-top: 0;
+    color: #5b3a29;
+}
+
+/* 주문자 정보 */
+.customer-info,
+.payment-method {
+    margin-top: 24px;
+    padding: 20px;
+    border: 1px solid #e4d6c3;
+    border-radius: 12px;
+    background-color: #fff;
+}
+
+.info-view p {
+    margin: 8px 0;
+}
+
+.info-edit {
+    margin-top: 12px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 14px;
+}
+
+.input-group label {
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.input-group input,
+.input-group textarea {
+    padding: 10px;
+    border: 1px solid #d8c3a5;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.input-group textarea {
+    height: 90px;
+    resize: none;
+}
+
+.payment-method label {
+    display: block;
+    margin: 10px 0;
+}
+
+/* 버튼 */
+#changeInfoButton,
+#saveInfoButton,
+#paymentButton {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #5b3a29;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* 오른쪽 주문 요약 */
+.payment-box {
+    width: 45%;
+    height: fit-content;
+    padding: 28px;
+    background-color: #fffaf2;
+    border: 1px solid #d8c3a5;
+    border-radius: 16px;
+    position: sticky;
+    top: 30px;
+}
+
+.payment-box h2 {
+    margin-top: 0;
+}
+
+/* 상품 */
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid #e4d6c3;
+}
+
+.item-image img {
+    width: 100px;
+    height: 120px;
+    object-fit: cover;
+    border: 1px solid #d8c3a5;
+    border-radius: 12px;
+}
+
+.item-info {
+    flex: 1;
+}
+
+.item-info h3 {
+    margin: 0 0 8px;
+}
+
+.item-info p {
+    margin: 5px 0;
+}
+
+.price {
+    font-weight: bold;
+    color: #7a5230;
+}
+
+.price::after {
+    content: "원";
+}
+
+.quantity-box {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.quantity-box button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #7a5230;
+    background-color: white;
+    cursor: pointer;
+}
+
+.quantity-box input {
+    width: 42px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid #7a5230;
+    border-left: none;
+    border-right: none;
+}
+
+.item-total {
+    width: 100px;
+    text-align: right;
+}
+
+.item-total p {
+    margin: 0 0 8px;
+    color: #777;
+}
+
+.item-total h3 {
+    margin: 0;
+    color: #5b3a29;
+    font-size: 16px;
+}
+
+/* 가격 요약 */
+.price-info {
+    margin-top: 24px;
+}
+
+.price-info p {
+    display: flex;
+    justify-content: space-between;
+    margin: 14px 0;
+}
+
+.price-info hr {
+    margin: 22px 0;
+    border: none;
+    border-top: 1px solid #d8c3a5;
+}
+
+.total-price strong {
+    color: #7a5230;
+    font-size: 20px;
+}
+
+#paymentButton {
+    width: 100%;
+    margin-top: 20px;
+    padding: 16px;
+    font-size: 16px;
+}
+
+#changeInfoButton:hover,
+#saveInfoButton:hover,
+#paymentButton:hover {
+    background-color: #3f2a1d;
+}
+
+.quantity-box button:hover {
+    background-color: #f1e2cd;
+}
