@@ -1,11 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hanbok Store - Cart</title>
+
+    <link rel="stylesheet" href="../css/cart.css">
+    <script src="../js/cart.js" defer></script>
 </head>
 <body>
-    
+
+    <header class="cart-header">
+        <h1>Hanbok Store</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#">Hanbok</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+    </header>
+
+    <main class="cart-page">
+
+        <section class="cart-section">
+            <h2>장바구니</h2>
+
+            <div class="cart-top">
+                <label>
+                    <input type="checkbox" id="allCheck" checked>
+                    전체 선택
+                </label>
+
+                <button type="button" id="deleteButton">
+                    선택 삭제
+                </button>
+            </div>
+
+            <div class="cart-item">
+                <input type="checkbox" class="item-check" checked>
+
+                <div class="item-image">
+                    <img src="../image/hanbok1.png" alt="궁중 한복 세트">
+                </div>
+
+                <div class="item-info">
+                    <h3>궁중 한복 세트</h3>
+                    <p>색상 : 홍색</p>
+                    <p>사이즈 : M</p>
+                    <p class="price">250000</p>
+
+                    <div class="quantity-box">
+                        <button type="button" class="minus-button">-</button>
+                        <input type="text" class="quantity-input" value="1" readonly>
+                        <button type="button" class="plus-button">+</button>
+                    </div>
+                </div>
+
+                <div class="item-total">
+                    <p>합계</p>
+                    <h3 class="item-price-total">250,000원</h3>
+                    <button type="button" class="remove-button">삭제</button>
+                </div>
+            </div>
+
+            <div class="cart-item">
+                <input type="checkbox" class="item-check" checked>
+
+                <div class="item-image">
+                    <img src="../image/hanbok2.png" alt="생활 한복">
+                </div>
+
+                <div class="item-info">
+                    <h3>생활 한복</h3>
+                    <p>색상 : 남색</p>
+                    <p>사이즈 : L</p>
+                    <p class="price">120000</p>
+
+                    <div class="quantity-box">
+                        <button type="button" class="minus-button">-</button>
+                        <input type="text" class="quantity-input" value="1" readonly>
+                        <button type="button" class="plus-button">+</button>
+                    </div>
+                </div>
+
+                <div class="item-total">
+                    <p>합계</p>
+                    <h3 class="item-price-total">240,000원</h3>
+                    <button type="button" class="remove-button">삭제</button>
+                </div>
+            </div>
+        </section>
+
+        <aside class="payment-box">
+            <h2>주문 요약</h2>
+
+            <div class="price-info">
+                <p>
+                    <span>상품 금액</span>
+                    <span id="productPrice">0원</span>
+                </p>
+
+                <p>
+                    <span>배송비</span>
+                    <span id="deliveryPrice">무료</span>
+                </p>
+
+                <hr>
+
+                <p class="total-price">
+                    <span>총 결제 금액</span>
+                    <strong id="totalPrice">0원</strong>
+                </p>
+            </div>
+
+            <div class="point-box">
+                <p>예상 적립금</p>
+                <h3 id="point">0P</h3>
+            </div>
+
+            <button type="button" id="orderButton">
+                주문하기
+            </button>
+        </aside>
+
+    </main>
+
 </body>
 </html>
