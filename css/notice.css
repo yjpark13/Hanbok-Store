@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "맑은 고딕", sans-serif;
+    background: #fff;
+    color: #333;
+    line-height: 1.8;
+}
+
+main {
+    width: 1000px;
+    margin: 40px auto;
+}
+
+/* 상단 제목 영역 */
+.notice-box {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.notice-box span,
+.notice-box p {
+    padding: 15px;
+    font-size: 15px;
+}
+
+.notice-box span {
+    background: #f8f8f8;
+    border-right: 1px solid #eee;
+    font-weight: bold;
+}
+
+.notice-box p {
+    border-bottom: 1px solid #eee;
+}
+
+
+/* 본문 */
+.notice-text {
+    width: 700px;
+    margin: 80px auto;
+    text-align: center;
+}
+
+.notice-text h3 {
+    font-size: 34px;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.notice-text p {
+    font-size: 28px;
+    line-height: 2;
+    margin-bottom: 60px;
+}
+
+.notice-text .point {
+    display: inline-block;
+    background: #fff36d;
+    padding: 15px 20px;
+    font-size: 24px;
+    line-height: 2;
+    margin-bottom: 60px;
+}
+
+
+.notice-text ul {
+   list-style: none;
+   width: 650px;
+   margin: 0 auto 60px;
+   text-align: left;
+   font-size: 20px;
+   line-height: 2;
+}
+
+.notice-text li {
+   margin-bottom: 10px;
+   font-size: 22px;
+}
+
+.notice-text li::before {
+   content: "✿";
+   margin-right: 15px;
+}
+
+.replace {
+    font-size: 22px;
+    margin: 10px 0;
+}
