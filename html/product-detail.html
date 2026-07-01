@@ -1,27 +1,149 @@
-product-detail.html
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>상품 상세</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>한복 쇼핑몰 추천</title>
+        <link rel="stylesheet" href="../css/product-detail.css">
+        <script src="../js/product-detail.js" defer></script>
+    </head>
+    <body>
+            <div class="example-box">
+                <section class="lesson-section">예복닷컴 소개 목차</section>
+                   
+            </div>
+        </section>
+        
 
-<link rel="stylesheet" href="product-detail.css">
-</head>
-<body>
+        <style>
+body{
+    font-family: Arial;
+    width:1100px;
+    margin:30px auto;
+}
 
-<header>
-    <h1>🛒 MY SHOP</h1>
-</header>
+header{
+    text-align:center;
+    margin-bottom:30px;
+}
 
-<main>
+.search-box{
+    margin:20px 0;
+}
 
-    <!-- 상세 정보가 출력될 영역 -->
-    <div id="productDetail"></div>
+button{
+    cursor:pointer;
+    padding:8px 15px;
+    margin:3px;
+}
 
-</main>
+.card-wrap{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+}
 
-<script src="product-detail.js"></script>
+.card{
+    width:220px;
+    border:1px solid #ddd;
+    padding:15px;
+    border-radius:10px;
+    text-align:center;
+}
 
-</body>
+.card img{
+    width:180px;
+    height:180px;
+    object-fit:cover;
+}
+
+#detail{
+    margin-top:30px;
+    border:1px solid #999;
+    padding:20px;
+}
+</style>
+
+<div class="container">
+
+    <!-- 헤더 -->
+    <header>
+
+        <h1>🛒 MY SHOP</h1>
+
+        <p>상품 상세 내역 안내</p>
+
+    </header>
+
+    <!-- 검색 영역 -->
+    <section class="search-box">
+
+        <input type="text" id="searchInput" placeholder="상품명을 입력하세요">
+
+        <button id="searchBtn">
+            검색
+        </button>
+
+    </section>
+
+ <section class="category">
+
+    <button class="categoryBtn" data-category="손거울">손거울</button>
+
+    <button class="categoryBtn" data-category="통/함 종류">통/함 종류</button>
+
+    <button class="categoryBtn" data-category="주머니">주머니</button>
+
+    <button class="categoryBtn" data-category="전체메뉴">전체메뉴</button>
+
+</section>
+
+<section id="productList"></section>
+
+    <!-- 추천상품 -->
+
+    <section>
+
+        <h2>⭐ 추천 상품</h2>
+
+        <div id="recommendList" class="card-wrap">
+
+        </div>
+
+    </section>
+
+    <!-- 상품목록 -->
+
+    <section>
+
+        <h2>📦 전체 상품</h2>
+
+        <div id="productList" class="card-wrap">
+
+        </div>
+
+    </section>
+
+    <!-- 상세보기 -->
+
+    <section>
+
+        <h2>📄 상품 상세 정보</h2>
+
+        <div id="detail">
+
+            <p>상품을 선택하면 상세 정보가 표시됩니다.</p>
+
+        </div>
+
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+
+
+   
+
+    </body>
 </html>
